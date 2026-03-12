@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>조정된 크기의 달력</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f5f5f5;
+      }
+      table {
+        width: 70%;
+        height: 70%;
+        border-collapse: collapse;
+        margin: 0 auto;
+        background-color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        text-align: center;
+        font-size: 1.2em;
+        padding: 15px;
+      }
+      th {
+        background-color: #4caf50;
+        color: white;
+        font-size: 1.5em;
+      }
+      td {
+        background-color: #f9f9f9;
+      }
+      td:hover {
+        background-color: #e0f7fa;
+        cursor: pointer;
+      }
+      .weekend {
+        background-color: #ffe0e0;
+      }
+      .today {
+        background-color: #fff3cd;
+        font-weight: bold;
+        border: 2px solid #ffc107;
+      }
+      caption {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+        font-weight: bold;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <!-- 캡션 (달력 제목) -->
+      <caption>
+        2026년 03월
+      </caption>
+      <thead>
+        <tr>
+          <th>일</th>
+          <th>월</th>
+          <th>화</th>
+          <th>수</th>
+          <th>목</th>
+          <th>금</th>
+          <th>토</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="weekend">1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td class="weekend">7</td>
+        </tr>
+        <tr>
+          <td class="weekend">8</td>
+          <td>9</td>
+          <td>10</td>
+          <td>11</td>
+          <td>12</td>
+          <td>13</td>
+          <td class="weekend">14</td>
+        </tr>
+        <tr>
+          <td class="weekend">15</td>
+          <td>16</td>
+          <td>17</td>
+          <td>18</td>
+          <td>19</td>
+          <td>20</td>
+          <td class="weekend">21</td>
+        </tr>
+        <tr>
+          <td class="weekend">22</td>
+          <td>23</td>
+          <td class="today">24</td>
+          <td>25</td>
+          <td>26</td>
+          <td>27</td>
+          <td class="weekend">28</td>
+        </tr>
+        <tr>
+          <td class="weekend">29</td>
+          <td>30</td>
+          <td>31</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

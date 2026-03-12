@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* position: static 요소에 대한 스타일 */
+      .box-static {
+        position: static; /* 기본 위치 값 (문서 흐름에 따라 배치) */
+        background: lightblue; /* 배경색을 밝은 파란색으로 설정 */
+        padding: 10px; /* 내부 여백을 10px로 설정 */
+      }
+      /* position: relative 요소에 대한 스타일 */
+      .box-relative {
+        position: relative; /* 자신의 원래 위치를 기준으로 배치 */
+        top: 20px; /* 자신의 원래 위치에서 아래로 20px 이동 */
+        left: 30px; /* 자신의 원래 위치에서 오른쪽으로 30px 이동 */
+        background: lightgreen; /* 배경색을 밝은 녹색으로 설정 */
+        padding: 10px; /* 내부 여백을 10px로 설정 */
+      }
+
+      /* 부모 컨테이너에 대한 스타일 */
+      .container {
+        position: relative; /* 자식 요소의 absolute 배치를 위한 기준 */
+        width: 300px; /* 컨테이너의 너비를 300px로 설정 */
+        height: 150px; /* 컨테이너의 높이를 150px로 설정 */
+        background: lightgray; /* 배경색을 밝은 회색으로 설정 */
+        margin-top: 20px; /* 컨테이너의 상단 외부 여백을 20px로 설정 */
+      }
+      /* position: absolute 요소에 대한 스타일 */
+      .box-absolute {
+        position: absolute; /* 부모 요소를 기준으로 위치 지정 */
+        top: 10px; /* 부모 요소의 위쪽에서 10px 떨어진 위치 */
+        left: 20px; /* 부모 요소의 왼쪽에서 20px 떨어진 위치 */
+        background: pink; /* 배경색을 분홍색으로 설정 */
+        padding: 10px; /* 내부 여백을 10px로 설정 */
+      }
+
+      #atag {
+        background-color: lightcoral;
+      }
+
+      #divtag {
+        background-color: lightgoldenrodyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- position: static 요소 -->
+    <div class="box-static">나는 static (기본값) 요소입니다.</div>
+    <div class="box-static">나는 static (기본값) 요소입니다.</div>
+
+    <!-- position: relative 요소 -->
+    <div class="box-relative">
+      나는 relative임
+      <a class="box-relative" id="atag">얘는 a태그임 ㅋㅋ</a>
+      <div class="box-relative" id="divtag">얘도 relative임</div>
+    </div>
+    <div class="box-relative">나는 relative임</div>
+    <div class="container">
+      부모 요소 (relative)
+
+      <div class="box-absolute">나는 absolute (절대 위치) 요소입니다.</div>
+    </div>
+  </body>
+</html>

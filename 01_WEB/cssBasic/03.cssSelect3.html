@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div,
+      p {
+        padding: 10px;
+        margin: 10px;
+        border: 2px solid black;
+      }
+
+      [title] {
+        background-color: aquamarine;
+        color: white;
+        font-weight: bold;
+      }
+
+      [title='gray'] {
+        color: gray;
+      }
+
+      p[title='gray'] {
+        border: 10px solid gray;
+        color: pink;
+      }
+
+      p[title~='red'] {
+        background-color: red;
+      }
+
+      p[class^='blue'] {
+        background: #2559d3;
+      }
+
+      /* class 속성이 "wrap"으로 끝나는 <p> 요소의 글자색 설정 */
+      p[class$='wrap'] {
+        color: rgb(150, 234, 255);
+        font-weight: bold;
+      }
+      /* class 속성에 "two" 문자열이 포함된 요소의 배경색 설정 */
+      [class*='red'] {
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div title="gray">selector[attribute name]</div>
+    <div title="red">selector[attribute name=value]</div>
+    <p title="gray">selector[attribute name=value]</p>
+    <p title="gray red blue">selector[attribute name~=value]</p>
+    <p class="blue-container">selector[attribute name^=value]</p>
+    <p class="blue-wrap">selector[attribute name$=value]</p>
+    <div class="oneredthree">dfdf</div>
+  </body>
+</html>

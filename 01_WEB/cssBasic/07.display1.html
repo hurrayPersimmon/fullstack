@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Display 속성 비교</title>
+    <style>
+      .container {
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      .box {
+        background-color: #f1f1f1;
+        margin: 5px;
+        padding: 10px;
+        text-align: center;
+      }
+      .inline {
+        display: inline;
+        background-color: lightblue;
+        padding: 10px;
+        width: 20px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+      }
+      .block {
+        display: block;
+        background-color: lightgreen;
+        padding: 10px;
+        border: 20px;
+      }
+      .inline-block {
+        display: inline-block;
+        background-color: lightcoral;
+        width: 100px;
+        height: 50px;
+        vertical-align: top;
+      }
+      div.inline-block:nth-child(2n) {
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>display: inline</h2>
+    <div class="container">
+      <span class="inline">인라인 1</span>
+      <span class="inline">인라인 2</span>
+      <span class="inline">인라인 3</span>
+    </div>
+
+    <h2>display: block</h2>
+    <div class="container">
+      <div class="block">블록 1</div>
+      <div class="block">블록 2</div>
+      <div class="block">블록 3</div>
+    </div>
+
+    <h2>display: inline-block</h2>
+    <div class="container">
+      <div class="inline-block" id="box1">인라인블록 1</div>
+      <div class="inline-block">인라인블록 2</div>
+      <div class="inline-block">인라인블록 3</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   console.log(typeof {});
+      //   console.log(typeof function () {});
+      //   console.log(function () {});
+      //   function show() {
+      //     alert('test');
+      //   }
+      //   var showed = function () {
+      //     alert('test');
+      //   };
+
+      //   show();
+      //   showed();
+
+      function x(data) {
+        if (data > 5) {
+          return function () {
+            //inner function
+            alert('inner function!');
+          };
+        }
+      }
+    </script>
+  </body>
+</html>

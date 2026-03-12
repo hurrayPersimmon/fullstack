@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS3 Selector Basic</title>
+    <style>
+      ul {
+        overflow: hidden;
+      }
+      li {
+        /* list에서 bullet 없애는 거 */
+        list-style: none;
+        float: left;
+        padding: 15px;
+        color: azure;
+      }
+
+      /* 첫항의 좌측 모서리를 둥글게 */
+      /* 좌상 우상 우하 좌하 */
+      li:first-child {
+        border-radius: 10px 0 0 10px;
+      }
+      /* 끝항의 우측 모서리를 둥글게 */
+      li:last-child {
+        border-radius: 0 10px 10px 0;
+      }
+      /* 짝수 빨강 */
+      li:nth-child(2n) {
+        background-color: #ff0003;
+      }
+      /* 홀수 버건디 */
+      li:nth-child(2n + 1) {
+        background-color: #800000;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>첫 번째</li>
+      <li>두 번째</li>
+      <li>세 번째</li>
+      <li>네 번째</li>
+      <li>다섯 번째</li>
+      <li>여섯 번째</li>
+      <li>일곱 번째</li>
+    </ul>
+    <h1>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa sequi
+      pariatur maxime praesentium aliquam libero nesciunt totam odio soluta
+      autem quas, eligendi facere accusamus, impedit facilis non earum? Ea,
+      sapiente.
+    </h1>
+  </body>
+</html>
