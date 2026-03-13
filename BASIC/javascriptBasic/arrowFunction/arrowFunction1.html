@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const add = function (x, y) {
+        console.log(x + y);
+      };
+      //   add(5, 4);
+
+      function add2(x, y) {
+        console.log(x + y);
+      }
+      //   add2(5, 4);
+
+      const sum = (x, y) => {
+        console.log(x + y);
+      };
+      //   sum(5, 4);
+
+      const squared = (x) => x * x;
+      //   console.log(squared(5));
+
+      const multiply = (x, y) => x * y;
+      //   console.log(multiply(5, 'q'));
+
+      function show(callback) {
+        callback(5, 9);
+      }
+
+      show(function (x, y) {
+        console.log(x);
+        console.log(y);
+      });
+
+      show((x, y) => {
+        console.log(x);
+        console.log(y);
+      });
+
+      const yaho = (x, y) => {
+        console.log(`야호 ${x}${y}`);
+      };
+
+      yaho('ㅋ', 'ㅎ');
+    </script>
+  </body>
+</html>
