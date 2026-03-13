@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UIEVENT</title>
+  </head>
+  <body>
+    <button id="myButton1">myClick1</button
+    ><!--eventsource-->
+    <button id="myButton2">myClick2</button>
+    <button id="myButton3">myClick3</button>
+
+    <script>
+      document
+        .getElementById('myButton1')
+        .addEventListener('click', function () {
+          console.log(this.innerHTML + '클릭', this);
+        });
+      document
+        .getElementById('myButton2')
+        .addEventListener('dblclick', () => console.log(this));
+    </script>
+  </body>
+</html>
