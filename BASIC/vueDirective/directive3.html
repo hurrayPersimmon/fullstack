@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app3">
+      <h3>양방향 예제1</h3>
+      <input type="text" v-model="message" />
+      <p>입력한 값 : {{message}}</p>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            message: '하이요',
+          };
+        },
+      }).mount('#app3');
+    </script>
+  </body>
+</html>

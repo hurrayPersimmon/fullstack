@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   const [x, y, z] = [10, 20, 30]; // 배열 구조 분해 할당
+      //   const person = {
+      //     name: 'apple',
+      //     data: () => {
+      //       console.log(123);
+      //     },
+      //     age: 25,
+      //   }; // 객체 구조 분해 할당
+      //   //   console.log(name);
+      //   //   person.data();
+      //   //   console.log(person['data'])
+
+      //   const { name } = person;
+      //   console.log(name);
+
+      let arr1 = [1, 2, 3];
+      let arr2 = [...arr1, 4, 5]; //spread 연산자
+      console.log(arr1);
+      console.log(arr2);
+
+      // reduce의 인자 a = 누적 값, b = 현재 값, -5 = 시작 값)
+      const sumAll = (...numbers) => numbers.reduce((a, b) => a + b, -5);
+      console.log(sumAll(1, 2, 3, 4, 5));
+
+      const test = (number) => console.log(number);
+      test(1, 2, 3, 4, 5); // 인자가 하나만 들어가서, rest 연산자를 안쓰면 배열을 넣을 수 없다.
+    </script>
+  </body>
+</html>

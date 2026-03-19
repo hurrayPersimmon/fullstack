@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      Message: {{textMessage}}
+      <br />
+      <br />
+      <h2 v-text="textMessage"></h2>
+      <h2 v-html="tagMessage"></h2>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            textMessage: '소리없는 아우성',
+            tagMessage: '<i> 소리없는 아우성 </i>',
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

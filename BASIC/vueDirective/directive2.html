@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <table border="1">
+        <thead>
+          <tr>
+            <th>순번</th>
+            <th>학번</th>
+            <th>이름</th>
+            <th>학과</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(student, index) in students">
+            <td>{{index+1}}</td>
+            <td>{{student.no}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.dept}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <script src="https://unpkg.com/vue"></script>
+
+      <script>
+        var app = Vue.createApp({
+          //app 인스턴스
+          name: 'App',
+          data() {
+            return {
+              students: [
+                {
+                  no: '19101',
+                  name: '홍길동',
+                  dept: '정치외교',
+                },
+
+                {
+                  no: '20102',
+                  name: '신사임',
+                  dept: '국어국문',
+                },
+
+                {
+                  no: '22103',
+                  name: '강감찬',
+                  dept: '기계학과',
+                },
+              ],
+            };
+          },
+        });
+
+        app.mount('#app');
+      </script>
+    </div>
+  </body>
+</html>
