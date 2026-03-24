@@ -121,6 +121,29 @@
         <button @click="addTodo">add Todo</button>
       </div>
       <p v-if="todos.length === 0" class="empty-msg">Nothing to do :/</p>
+      <ul v-else>
+        <li
+          v-for="(todo, index) in todos"
+          :key="index"
+          :style="{
+            background : todo.done? '#e0e0e0' :  '#f0f0f0'
+          }"
+        >
+          <span
+            class="todo-text"
+            :class="{done: todo.done}"
+            @click="toggleTodo(index)"
+          >
+            {{todo.text}}
+          </span>
+          <button class="delete-btn" @click="removeTodo(index)">delete</button>
+        </li>
+      </ul>
+      <div class="status-box">
+        <p>
+          KDA : {{doneCount}}/{{todos.length - doneCount}}/{{ todos.length }}
+        </p>
+      </div>
     </div>
 
     <script src="https://unpkg.com/vue"></script>
@@ -129,17 +152,65 @@
         data() {
           return {
             newTodo: '',
-            todos: [],
+            todos: [
+              {
+                text: 'hi sam',
+                done: false,
+              },
+              {
+                text: 'ha',
+                done: true,
+              },
+            ],
             doneCount: 0,
           };
         },
 
         methods: {
-          addTodo() {},
+          addTodo() {
+            if (this.newTodo.trim() === '') {
+              // this.newTodo = '';
+              alert('empty todo!');
+              return;
+            }
 
-          removeTodo() {},
+            this.todos.push({
+              //배열이라서 가능하다.
+              text: this.newTodo,
+              done: false,
+            });
 
-          updateDoneCount() {},
+            // 입력창 초기화
+            this.newTodo = '';
+
+            // 완료 개수 다시 계산
+            this.updateDoneCount();
+          },
+
+          toggleTodo(index) {
+            this.todos[index].done = !this.todos[index].done;
+
+            this.updateDoneCount();
+          },
+
+          removeTodo(index) {
+            this.todos.splice(index, 1);
+
+            this.updateDoneCount();
+          },
+
+          updateDoneCount() {
+            let count = 0;
+
+            // 반복문으로 done 체크
+            for (let i = 0; i < this.todos.length; i++) {
+              if (this.todos[i].done) {
+                count++;
+              }
+            }
+
+            this.doneCount = count;
+          },
         },
       }).mount('#app');
     </script>
