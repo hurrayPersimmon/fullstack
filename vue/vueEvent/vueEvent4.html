@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 바깥 영역 */
+      #outer {
+        width: 300px;
+        height: 200px;
+        background-color: lightblue;
+        padding: 20px;
+      }
+
+      #middle {
+        position: absolute;
+        width: 120px;
+        height: 100px;
+        background-color: white;
+        line-height: 100px;
+        text-align: center;
+      }
+      /* 안쪽 영역 */
+      #inner {
+        width: 120px;
+        height: 100px;
+        background-color: gold;
+        line-height: 100px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div id="outer" @click="outerClick">
+        Outer
+        <div id="middle" @click.stop="middleClick">
+          middle
+          <div id="inner" @click.stop="innerClick">Inner</div>
+        </div>
+      </div>
+      <p>{{log}}</p>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            log: '',
+          };
+        },
+
+        methods: {
+          outerClick() {
+            this.log += 'outerClick \n';
+          },
+          innerClick() {
+            this.log += 'innerClick \n';
+          },
+          middleClick() {
+            this.log += 'middleClick \n';
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

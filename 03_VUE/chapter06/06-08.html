@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .buttonColor {
+        background-color: aqua;
+        color: black;
+      }
+      .buttonAlign {
+        text-align: center;
+        width: 120px;
+      }
+
+      .buttonBorder {
+        border: khaki dashed 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <input type="checkbox" v-model="buttonColor" /> 색상 <br />
+      <input type="checkbox" v-model="buttonAlign" /> 정렬, 크기 <br />
+      <input type="checkbox" v-model="buttonBorder" /> 테두리<br />
+      <button
+        class="staticBorder"
+        :class="{buttonColor, buttonAlign, buttonBorder}"
+      >
+        버튼
+      </button>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      var vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            buttonColor: false,
+            buttonAlign: false,
+            buttonBorder: false,
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

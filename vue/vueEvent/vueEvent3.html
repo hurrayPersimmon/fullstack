@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <a href="https://www.naver.com" @click="checkMove">naver Link</a>
+      <p>{{message}}</p>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            message: '',
+          };
+        },
+
+        methods: {
+          checkMove(e) {
+            const result = confirm('really want?');
+
+            if (!result) {
+              e.preventDefault();
+              this.message = 'link denied';
+            } else {
+              this.message = 'link permitted';
+              setTimeout(1);
+            }
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

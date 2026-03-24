@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 글자 크기 증가 -->
+      <button @click="fontSize += 2">글자 크게</button>
+
+      <!-- 글자 크기 감소 -->
+      <button @click="fontSize -= 2">글자 작게</button>
+
+      <!-- 색상 변경 -->
+      <button @click="changeColor">색상 변경</button>
+
+      <p :style="{ color: textColor, fontSize: fontSize + 'px' }">
+        글자 크기가 동적으로 변경됩니다.
+      </p>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            textColor: 'navy',
+            fontSize: 18,
+          };
+        },
+        methods: {
+          changeColor() {
+            this.textColor = this.textColor === 'navy' ? 'orange' : 'navy';
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

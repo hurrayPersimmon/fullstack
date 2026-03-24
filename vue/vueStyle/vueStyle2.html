@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div :style="cardStyle">The card is painting by dark side</div>
+
+      <br />
+
+      <!-- 버튼 클릭 시 스타일 변경 -->
+      <button @click="changeToDark">dark mode</button>
+      <button @click="changeToLight">light mode</button>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            cardStyle: {
+              width: '300px',
+              padding: '20px',
+              border: '1px solid #333',
+              borderRadius: '10px', // border-radius
+              backgroundColor: '#ffffff', // 배경색
+              color: '#000000', // 글자색
+            },
+          };
+        },
+        methods: {
+          changeToDark() {
+            this.cardStyle.backgroundColor = '#222222';
+            this.cardStyle.color = '#ffffff';
+          },
+          changeToLight() {
+            this.cardStyle.backgroundColor = '#ffffff';
+            this.cardStyle.color = '#000000';
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
