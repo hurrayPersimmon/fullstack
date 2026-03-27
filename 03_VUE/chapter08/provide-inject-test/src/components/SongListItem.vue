@@ -1,6 +1,6 @@
 <template>
   <li>
-    <i :class="song.done ? true : false"></i>
+    <i :class="song.done ? icons.checked : icons.unchecked"></i>
     {{ song.title }}
   </li>
 </template>
@@ -8,5 +8,6 @@
 export default {
   name: 'SongListItem',
   props: ['song'],
+  inject: ['icons'],
 };
 </script>

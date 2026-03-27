@@ -6,6 +6,7 @@
 
 <script>
 import { computed } from 'vue';
+
 export default {
   name: 'App',
   data() {
@@ -24,6 +25,7 @@ export default {
         checked: 'far fa-check-circle',
         unchecked: 'far fa-circle',
       },
+      // doneCount에 compouted 함수 호출 computed는 arraw function을 인자로 받음.
       doneCount: computed(() => {
         return this.songs.filter((s) => s.done === true).length;
       }),
