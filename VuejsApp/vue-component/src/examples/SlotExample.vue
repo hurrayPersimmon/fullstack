@@ -71,7 +71,7 @@
     <ProductList :items="products">
       <template v-slot:badge="slotProps">
         <span class="badge" :class="{ active: slotProps.sale }">
-          {{ slotProps.sale ? 'SALE' : 'NORMAL' }}
+          {{ slotProps.item.sale ? 'SALE' : 'NORMAL' }}
         </span>
       </template>
 
