@@ -17,20 +17,16 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'InputTodo',
-  data() {
-    return { todo: '' };
-  },
-  emits: ['add-todo'],
-  methods: {
-    addTodoHandler() {
-      if (this.todo.length >= 3) {
-        this.$emit('add-todo', this.todo);
-        this.todo = '';
-      }
-    },
-  },
+<script setup>
+import { ref } from 'vue';
+
+const emit = defineEmits(['add-todo']);
+const todo = ref();
+
+const addTodoHandler = () => {
+  if (todo.value.length >= 3) {
+    emit('add-todo', todo.value);
+    todo.value = '';
+  }
 };
 </script>
