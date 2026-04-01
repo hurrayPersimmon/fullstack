@@ -8,15 +8,14 @@
           :key="member.id"
           class="col-6 col-xs-6 col-sm-4 col-md-3 col-lg-2"
         >
-          <!-- <router-link :to="'/members/' + member.id"> -->
-          <router-link :to="{ name: '/members/id', params: { id: member.id } }">
+          <router-link :to="'/members/' + member.id">
             <img
               class="img-thumbnail"
               style="width: 90px; height: 110px"
               :src="member.photo"
               :title="member.name"
             /><br />
-            <h6 class="display-7">{{ m.name }}</h6>
+            <h6 class="display-7">{{ member.name }}</h6>
           </router-link>
         </div>
       </div>

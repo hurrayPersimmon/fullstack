@@ -8,15 +8,15 @@ import { createRouter, createWebHistory } from 'vue-router';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    { path: '/', component: Home },
-    { path: '/about', component: About },
-    { path: '/members', component: Members },
-    { path: '/members/:id', component: MemberInfo },
+    { path: '/', name: 'home', component: Home },
+    { path: '/about', name: 'about', component: About },
+    { path: '/members', name: 'members', component: Members },
+    { path: '/members/:id', name: '', component: MemberInfo },
     {
       path: '/songs',
       name: 'videos',
       component: Videos,
-      children: [{ path: ':id', name: 'videos/id', component: VideoPlayer }],
+      // children: [{ path: ':id', name: 'videos/id', component: VideoPlayer }],
     },
   ],
 });

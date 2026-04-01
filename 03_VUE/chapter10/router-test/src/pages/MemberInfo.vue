@@ -35,5 +35,9 @@
 
 <script setup>
 import { useRoute } from 'vue-router';
+import members from '@/members.json';
+
 const currentRoute = useRoute();
+const id = parseInt(currentRoute.params.id, 10);
+const member = members.find((m) => m.id === id);
 </script>
