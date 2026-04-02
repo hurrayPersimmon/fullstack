@@ -2,6 +2,7 @@
   <div class="container">
     <Header />
     <!-- <router-view></router-view> -->
+
     <RouterView />
   </div>
 </template>
