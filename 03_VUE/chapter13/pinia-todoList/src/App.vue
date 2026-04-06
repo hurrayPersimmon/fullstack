@@ -1,0 +1,18 @@
+<template>
+  <div class="container">
+    <Header />
+    <router-view />
+  </div>
+</template>
+
+<script setup>
+// import { computed } from 'vue';
+import Header from '@/components/Header.vue';
+import { useTodoListStore } from '@/stores/todoList.js';
+// import axios from 'axios';
+
+const todoListStore = useTodoListStore();
+const fetchTodoList = todoListStore.fetchTodoList;
+
+fetchTodoList();
+</script>
