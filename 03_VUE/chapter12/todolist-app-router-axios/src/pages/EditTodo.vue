@@ -62,7 +62,6 @@ const updateTodoHandler = () => {
     alert('할일은 반드시 입력해야 합니다');
     return;
   }
-  updateTodo({ ...todoItem });
-  router.push('/todos');
+  updateTodo({ ...todoItem }, router.push('/todos'));
 };
 </script>

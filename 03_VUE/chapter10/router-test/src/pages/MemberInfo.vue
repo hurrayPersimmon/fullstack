@@ -28,8 +28,8 @@
       :href="member.youtube"
     ></a>
     <br /><br />
-    <!-- <router-link to="/members">멤버 목록으로</router-link> -->
-    <router-link to="{name : 'members'}">멤버 목록으로</router-link>
+    <!-- <router-link to="/about">멤버 목록으로</router-link> -->
+    <router-link to="{name : 'about'}">멤버 목록으로</router-link>
   </div>
 </template>
 
