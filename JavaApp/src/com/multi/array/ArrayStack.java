@@ -1,4 +1,4 @@
-package array;
+package com.multi.array;
 
 public class ArrayStack {
     private int[] stack;
