@@ -8,6 +8,9 @@ public class SmsNotification extends Notification {
 
     @Override
     public void send() { // 부모의 메소드 접근제한자보다 좁은 범위여야한다.
+//        send(); // 한무 참조 stack Overflow
+//        -> 함수의 호출 영역인 stack에 overflow 발생
+        super.send();
         System.out.println("SMS Notification");
     }
 }
