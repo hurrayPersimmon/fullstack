@@ -1,0 +1,8 @@
+package ch11.sec03.exam02;
+
+public class ExceptionHandlingExample {
+
+    public static void main(String[] args) {
+    }
+
+}
