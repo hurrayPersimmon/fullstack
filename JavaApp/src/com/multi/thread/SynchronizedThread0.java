@@ -1,5 +1,7 @@
 package com.multi.thread;
 
+import java.util.Comparator;
+
 public class SynchronizedThread0 implements Runnable {
 
     private int money = 10000;
