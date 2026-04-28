@@ -1,6 +1,5 @@
 package ch15.sec06.exam02;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -13,7 +12,6 @@ public class QueueExample {
         messageQueue.offer(new Message("sendSMS", "jennie"));
         messageQueue.offer(new Message("sendKakaotalk", "winter"));
 
-        Arrays.sort()
 
         while(!messageQueue.isEmpty()) {
             Message message = messageQueue.poll();
